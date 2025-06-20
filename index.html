@@ -11,7 +11,7 @@
 <body>
   <header>
     <div class="logo">SATNER<span class="dot">.</span></div>
-    <nav id="main-nav" >
+    <nav id="main-nav">
       <a href="#home" class="active">HOME</a>
       <a href="#about">ABOUT</a>
       <a href="#skills">SKILLS</a>
@@ -30,7 +30,7 @@
     <section id="home" class="home-banner section active">
       <div class="home-left">
         <h2 class="fade-in">HELLO</h2>
-        <h1 class="fade-in">I AM <span>SATNER</span></h1>
+        <h1 class="fade-in">I AM <span id="home-name">SATNER</span></h1>
         <h3 class="fade-in">FULL STACK DEVELOPER</h3>
         <div class="buttons fade-in">
           <button class="hire">HIRE ME</button>
@@ -45,46 +45,16 @@
     <!-- Other Sections (Scaled Down) -->
     <div class="page-sections">
       <!-- About Section -->
-      <section id="about" class="about-content section ">
+      <section id="about" class="about-content section">
         <div class="about-container">
           <div class="about-image slide-in-left">
             <img src="about-us.png" alt="About me" loading="lazy" class="about-img">
           </div>
           <div class="about-details slide-in-right">
             <h2 class="section-title">About <span>Me</span></h2>
-            <h3>Full Stack Developer & UI/UX Designer</h3>
-            <p class="about-text">
-              I'm a passionate Full Stack Developer with 5+ years of experience creating innovative web solutions. 
-              My journey in tech began when I built my first website at 16, and since then I've developed 
-              over 50 applications for clients worldwide.
-            </p>
-            <p class="about-text">
-              My expertise spans both frontend and backend development, with a strong focus on creating 
-              responsive, user-friendly interfaces and scalable server architectures. I specialize in 
-              JavaScript frameworks and cloud technologies.
-            </p>
-            <div class="personal-info">
-              <div class="info-item">
-                <span class="info-label">Name:</span>
-                <span class="info-value">SATNER</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Email:</span>
-                <span class="info-value">SATNER@gmail.com</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Experience:</span>
-                <span class="info-value">5+ Years</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Location:</span>
-                <span class="info-value">San Francisco, CA</span>
-              </div>
-            </div>
-            <div class="about-buttons">
-              <!-- <button class="btn hire-btn hire">Hire Me</button> -->
-              <!-- <button id="download-resume" class="btn download-btn" >Download CV</button> -->
-            </div>
+            <h3 id="job-title"></h3>
+            <div id="about-description"></div>
+            <div class="personal-info" id="personal-info"></div>
           </div>
         </div>
       </section>
@@ -92,125 +62,42 @@
       <!-- Skills Section -->
       <section id="skills" class="skills-section section">
         <h2 class="section-title">My <span>Skills</span></h2>
-        <div class="skills-container">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>HTML/CSS</span>
-              <span>95%</span>
-            </div>
-            <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>JavaScript</span>
-              <span>90%</span>
-            </div>
-            <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>React</span>
-              <span>85%</span>
-            </div>
-            <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span>Node.js</span>
-              <span>88%</span>
-            </div>
-            <div class="progress-bar"><div class="progress" style="width: 88%"></div></div>
-          </div>
-        </div>
+        <div class="skills-container" id="skills-container"></div>
       </section>
 
       <!-- Portfolio Section -->
       <section id="portfolio" class="portfolio-section section">
         <h2 class="section-title">My <span>Portfolio</span></h2>
-        <div class="portfolio-container">
-          <div class="portfolio-item scale-in">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="E-commerce Platform" loading="lazy">
-            <div class="portfolio-overlay">
-              <h3>E-commerce Platform</h3>
-              <p>React, Node.js, MongoDB</p>
-              <a href="#" class="view-btn">View Project</a>
-            </div>
-          </div>
-          <div class="portfolio-item scale-in">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Task Management App" loading="lazy">
-            <div class="portfolio-overlay">
-              <h3>Task Management App</h3>
-              <p>Vue.js, Firebase</p>
-              <a href="#" class="view-btn">View Project</a>
-            </div>
-          </div>
-          <div class="portfolio-item scale-in">
-            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Social Media Dashboard" loading="lazy">
-            <div class="portfolio-overlay">
-              <h3>Social Media Dashboard</h3>
-              <p>Angular, Django</p>
-              <a href="#" class="view-btn">View Project</a>
-            </div>
-          </div>
-        </div>
+        <div class="portfolio-container" id="portfolio-container"></div>
       </section>
 
       <!-- Blog Section -->
       <section id="blog" class="blog-section section">
         <h2 class="section-title">Latest <span>Blog</span></h2>
-        <div class="blog-container">
-          <div class="blog-card fade-in">
-            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Modern Web Development Trends" loading="lazy">
-            <div class="blog-content">
-              <span class="blog-date">June 15, 2023</span>
-              <h3>Modern Web Development Trends</h3>
-              <p>Exploring the latest technologies shaping the future of web development.</p>
-              <a href="#" class="read-more">Read More</a>
-            </div>
-          </div>
-          <div class="blog-card fade-in">
-            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Optimizing React Performance" loading="lazy">
-            <div class="blog-content">
-              <span class="blog-date">May 28, 2023</span>
-              <h3>Optimizing React Performance</h3>
-              <p>Key techniques to improve your React application's speed and efficiency.</p>
-              <a href="#" class="read-more">Read More</a>
-            </div>
-          </div>
-          <div class="blog-card fade-in">
-            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cloud Architecture Best Practices" loading="lazy">
-            <div class="blog-content">
-              <span class="blog-date">April 10, 2023</span>
-              <h3>Cloud Architecture Best Practices</h3>
-              <p>Designing scalable and cost-effective cloud solutions for your applications.</p>
-              <a href="#" class="read-more">Read More</a>
-            </div>
-          </div>
-        </div>
+        <div class="blog-container" id="blog-container"></div>
       </section>
 
       <!-- Contact Section -->
       <section id="contact" class="contact-section section">
         <h2 class="section-title">Get In <span>Touch</span></h2>
         <div class="contact-container">
-          <div class="contact-info fade-in">
+          <div class="contact-info fade-in" id="contact-info">
             <div class="info-item">
               <i class="fas fa-envelope" aria-hidden="true"></i>
-              <span>SATNER@gmail.com</span>
+              <span id="contact-email"></span>
             </div>
             <div class="info-item">
               <i class="fas fa-phone" aria-hidden="true"></i>
-              <span>+91 910878787878</span>
+              <span id="contact-phone"></span>
             </div>
             <div class="info-item">
               <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-              <span>San Francisco, CA</span>
+              <span id="contact-location"></span>
             </div>
           </div>
           <form class="contact-form fade-in" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="a2710f77-4610-4beb-9ae9-893489bf6c56">
             <input type="hidden" name="subject" value="New Contact Form Submission">
-            <!-- <input type="checkbox" name="botcheck" id="botcheck" class="hidden"> -->
             
             <div class="form-group">
               <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
@@ -241,13 +128,10 @@
   <footer class="fade-in">
     <div class="footer-content">
       <div class="logo">SATNER<span class="dot">.</span></div>
-      <div class="social-links">
-        <a href="#" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <div class="social-links" id="social-links">
+        <!-- Social links will be populated by JavaScript -->
       </div>
-      <p>&copy; 2023 Your Name. All Rights Reserved.</p>
+      <p id="footer-copyright"></p>
     </div>
   </footer>
 
@@ -256,6 +140,8 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- JavaScript Files -->
+  <script src="config.js"></script>
   <script src="index.js"></script>
 </body>
 </html>

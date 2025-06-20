@@ -360,3 +360,99 @@ const downloadResume = document.getElementById('download-resume');
             });
         }
     });
+    document.addEventListener("DOMContentLoaded", () => {
+      // Populate About Section
+      document.getElementById('job-title').textContent = `${personalDetails.jobTitle} & UI/UX Designer`;
+      
+      const aboutDescription = document.getElementById('about-description');
+      personalDetails.description.forEach(paragraph => {
+        const p = document.createElement('p');
+        p.className = 'about-text';
+        p.textContent = paragraph;
+        aboutDescription.appendChild(p);
+      });
+      
+      const personalInfo = document.getElementById('personal-info');
+      personalInfo.innerHTML = `
+        <div class="info-item">
+          <span class="info-label">Name:</span>
+          <span class="info-value">${personalDetails.name}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Email:</span>
+          <span class="info-value">${personalDetails.email}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Experience:</span>
+          <span class="info-value">${personalDetails.experience}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Location:</span>
+          <span class="info-value">${personalDetails.location}</span>
+        </div>
+      `;
+      
+      // Populate Skills Section
+      const skillsContainer = document.getElementById('skills-container');
+      skills.forEach(skill => {
+        const skillItem = document.createElement('div');
+        skillItem.className = 'skill-item';
+        skillItem.innerHTML = `
+          <div class="skill-info">
+            <span>${skill.name}</span>
+            <span>${skill.percentage}</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress" style="width: ${skill.percentage}"></div>
+          </div>
+        `;
+        skillsContainer.appendChild(skillItem);
+      });
+      
+      // Populate Portfolio Section
+      const portfolioContainer = document.getElementById('portfolio-container');
+      portfolioItems.forEach(item => {
+        const portfolioItem = document.createElement('div');
+        portfolioItem.className = 'portfolio-item scale-in';
+        portfolioItem.innerHTML = `
+          <img src="${item.image}" alt="${item.title}" loading="lazy">
+          <div class="portfolio-overlay">
+            <h3>${item.title}</h3>
+            <p>${item.technologies}</p>
+            <a href="#" class="view-btn">View Project</a>
+          </div>
+        `;
+        portfolioContainer.appendChild(portfolioItem);
+      });
+      
+      // Populate Blog Section
+      const blogContainer = document.getElementById('blog-container');
+      blogPosts.forEach(post => {
+        const blogCard = document.createElement('div');
+        blogCard.className = 'blog-card fade-in';
+        blogCard.innerHTML = `
+          <img src="${post.image}" alt="${post.title}" loading="lazy">
+          <div class="blog-content">
+            <span class="blog-date">${post.date}</span>
+            <h3>${post.title}</h3>
+            <p>${post.description}</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        `;
+        blogContainer.appendChild(blogCard);
+      });
+      
+      // Update contact info
+      document.querySelectorAll('.contact-info .info-item:nth-child(1) span').forEach(el => {
+        el.textContent = personalDetails.email;
+      });
+      document.querySelectorAll('.contact-info .info-item:nth-child(2) span').forEach(el => {
+        el.textContent = personalDetails.phone;
+      });
+      
+      // Update footer year
+      document.querySelector('footer p').textContent = `© ${new Date().getFullYear()} ${personalDetails.name}. All Rights Reserved.`;
+      
+      // Rest of your existing JavaScript code (navigation, animations, etc.)
+      // ...
+    });
